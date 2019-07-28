@@ -1,0 +1,115 @@
+@import "~antd-mobile/dist/antd-mobile.less";
+
+@primary-color: #3375C5; //修改主题
+@redColor:#FF3939;
+@zero:0;
+
+
+
+@bgG:{
+  background: #CECECE;
+};
+@marginBotton:{
+  margin-bottom: 10px
+};
+@marginTop:{
+  margin-top: 10px
+};
+@flexSpace:{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+};
+@flexCenter:{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+};
+@flexStart:{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+};
+@flexWrap:{
+  flex-wrap: wrap;
+};
+body {
+ margin:@zero
+}
+.am-button {
+  @marginTop();
+};
+.am-button span{
+  color:#fff!important;
+ 
+}
+// 头像
+.userImg{
+  
+}
+// --------------------------------rem-------------------------------------
+
+// 将iphone6(375*667) 的屏幕分成10份(大部分ui以iPhone6来作图)
+
+
+
+// 字体大小的函数
+.fs(@px) {
+  font-size: unit(@px / 37.5, rem);
+}
+
+/*----- 宽度 -----*/
+.w(@px) {
+  width: unit(@px / 37.5, rem);
+}
+
+/*----- 高度 -----*/
+.h(@px) {
+  height: unit(@px / 37.5, rem);
+}
+
+/*----- 行高 -----*/
+.lh(@px) {
+  line-height: unit(@px / 37.5, rem);
+}
+
+/*----- 背景尺寸 -----*/
+.b_s(@px, @px) {
+  -webkit-background-size: unit(@px / 37.5, rem) unit(@px / 37.5, rem);
+  background-size: unit(@px / 37.5, rem) unit(@px / 37.5, rem);
+}
+/**
+* [背景尺寸，设置宽度，高度auto]
+ */
+.b_s1(@px) {
+  -webkit-background-size: unit(@px / 37.5, rem) auto;
+  background-size: unit(@px / 37.5, rem) auto;
+}
+
+.b_s2(@px) {
+  -webkit-background-size: auto unit(@px / 37.5, rem);
+  background-size: auto unit(@px / 37.5, rem);
+}
+
+/*----- margin -----*/
+// .h(@px){
+//   height: unit(@px / 37.5, rem);
+// }
+// .fs(@px){
+//   font-size: unit(@px / 37.5, rem);
+// }
+// .w(@px){
+//   width: unit(@px / 37.5, rem);
+// }
+.mt(@px) {
+  margin-top: unit(@px / 37.5, rem);
+}
+.mr(@px) {
+  margin-right: unit(@px / 37.5, rem);
+}
+.mb(@px) {
+  margin-bottom: unit(@px / 37.5, rem);
+}
+.ml(@px) {
+  margin-left: unit(@px / 37.5, rem);
+}
