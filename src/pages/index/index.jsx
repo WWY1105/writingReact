@@ -4,10 +4,10 @@ import Order from '../../component/Order/Order';
 import Footer from '../../component/Footer/Footer'; 
 import commonObj from '../../assets/js/common'
 import './index.less'
-import PropTypes from 'prop-types'; 
+// import PropTypes from 'prop-types'; 
 import {connect }from 'react-redux'
-import {Button, WingBlank}from 'antd-mobile'
-import history from '../../history'
+// import {Button, WingBlank}from 'antd-mobile'
+// import history from '../../history'
 // connect方法的作用：将额外的props传递给组件，并返回新的组件，组件在该过程中不会受到影响
 
 import {setGradeList, setPageTitle,getBanner} from '../../store/actions'
@@ -32,10 +32,21 @@ componentDidMount() {
   console.log(window)
      // 获取订单列表
   this.getOrderList()
+  console.log(this.props)
 }
 
 componentWillMount() {
      
+}
+// 跳转订单详情
+seeOrdeDetail=(id)=>{
+    console.log('订单'+id)
+    this.props.history.push({
+        pathname:'/orderDetail',
+        state:{
+            orderId:id
+        }
+    })
 }
 // 获取订单列表
 getOrderList=()=>{
@@ -47,38 +58,25 @@ getOrderList=()=>{
         })
     })
 }
-gradeChange(val) {
-    if (val.length > 0) {
-        this.setState( {
-            gradeIndex:val[0]
-        })
-    }
-   
-    this.setState( {
-        gradeExtra:val[0]
-    })
-}
-gotoSee() {
-    this.props.history.push( {pathname:'/searchWriterResult', query: {name:'sunny'}})
-}
 
     render() {
-        
         return ( 
             < div >  
                 {/* 顶部轮播图  */}
-                < MyCarousel bannerList={this.props.bannerList} imgHeight='120'/>
-                < WingBlank >  
+                <div className="bannerBox" style={{minHeight:'120px',borderBottom:'1px solid #ccc'}}>
+                   < MyCarousel bannerList={this.props.bannerList} imgHeight='120'/>
+                </div>
+                {/* < WingBlank >   */}
                
                 {/* 循环每个订单 */}
                 {
                     this.state.orderList.map((item,index)=>
                        (
-                            <Order id={item.id}/>
+                            <Order order={item} seeOrdeDetail={this.seeOrdeDetail} key={item.id}/>
                         )
                     )
                 }
-                </WingBlank >  
+                {/* </WingBlank >   */}
                 < Footer nowPage =  {this.state.nowPage}changeTab =  {changeTab.bind(this)}/>
             </div > 
             )

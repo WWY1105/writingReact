@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
  import Mine from './pages/mine/mine';
  import Mission from './pages/mission/mission';
  import Circle from './pages/circle/circle';
+ import OrderDetail from './pages/orderDetail/orderDetail'
  import SearchWriterResult from './pages/searchWriterResult/searchWriterResult'
  import { Provider } from 'react-redux'
 
@@ -21,6 +22,7 @@ ReactDOM.render(
             <BrowserRouter >
                <Switch>
                    <Route path='/' exact component={Index}/>
+                   <Route path='/orderDetail' exact component={OrderDetail}/>
                    <Route path='/circle' component={Circle}/>
                    <Route path='/mine' component={Mine}/>
                    <Route path='/mission' component={Mission}/>

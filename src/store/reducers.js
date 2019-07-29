@@ -59,6 +59,15 @@ function pageTitle (state = defaultState.pageTitle, action) {
          return state
       }
   }
+  // 订单详情
+  function orderDetail(state=defaultState.orderDetail,action){
+    switch(action.type){
+      case 'GET_ORDER_DETAIL':
+      return action.data
+      default :
+      return state
+    }
+  }
 export default combineReducers({
-    gradeList,pageTitle,searchGradeReducer,bannerList,imgUrl,baseUrl
+    gradeList,pageTitle,searchGradeReducer,bannerList,imgUrl,baseUrl,orderDetail
 })

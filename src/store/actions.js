@@ -58,9 +58,23 @@ function getBanner(data){
           
     }
 }
+// 获取订单详情
+function getOrderDetail(id){
+    return (dispatch)=>{
+        get('api/Order/'+id).then((res)=>{return res.json()}).then(
+            (res)=>{
+                dispatch({
+                    type:'GET_ORDER_DETAIL',
+                    data:{...res.data}
+                })
+            }
+        )
+    }
+}
   export{
     setGradeList,
     setPageTitle,
     setSearchGrade,
-    getBanner
+    getBanner,
+    getOrderDetail
   }

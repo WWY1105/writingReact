@@ -1,6 +1,50 @@
 @import '../../index.less';
 
 .orderBox{
-    width: 90%;
+    width:100%;
+    border-bottom: 1px solid #cecece;
     margin: 0 auto;
+    .mb(20);
+    .pt(20);
+    .pb(20);
+    & .top{
+        @flexSpace();
+        & .left{
+            @flexStart();
+        };
+        & .right {
+            & .priceDesc{
+                text-align: right;
+            };
+        };
+    };
+    & .content{
+        background: @contentBg;
+        .mt(20);
+        .pd(20);
+        padding-top: @zero;
+        & p{
+            @flexSpace();
+           & span {
+            color: @priceDesc;
+            .mt(28)!important;
+           }
+           &.orderSketch{
+            color: @priceDesc;
+            .mt(20)
+           }
+        } 
+    }
+    & .footer {
+        @flexSpace();
+        &  .left{
+            @flexSpace();
+            width:60%;
+           // .pt(20);
+           & span{
+               color: @priceDesc;
+           }
+        }
+      
+    }
 }

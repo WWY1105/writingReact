@@ -10,5 +10,8 @@ export default {
     uid:'101' || localStorage.getItem('uid'), 
     userType:'author',
     // banner
-    bannerList:[]
+    bannerList:[],
+    // 订单详情
+    orderDetail:{}
+
 }
